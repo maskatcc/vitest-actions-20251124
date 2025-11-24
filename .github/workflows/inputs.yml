@@ -27,7 +27,7 @@ jobs:
     name: Dump inputs
     runs-on: ubuntu-latest
     steps:
-      - name: Confirm apply
+      - name: Cancel apply
         if: github.event.inputs.apply != 'yes'
         env:
           APPLY: ${{ github.event.inputs.apply }}
