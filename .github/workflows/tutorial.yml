@@ -1,6 +1,7 @@
 name: Tutorial Workflow
 on:
-  workflow_dispatch:
+  - push
+  - workflow_dispatch
 
 jobs:
   command:
@@ -9,3 +10,15 @@ jobs:
     steps:
       - name: Show ubuntu details
         run: lsb_release -a
+      - name: Inspect files before checkout
+        run: ls -la
+      - name: show current directory before checkout
+        run: pwd
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Inspect files after checkout
+        run: ls -la
+      - name: show current directory after checkout
+        run: pwd
+      - name: show all branches after checkout
+        run: git branch -a
