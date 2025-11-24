@@ -21,6 +21,10 @@ on:
         type: string
         required: true
         description: 'apply changes? (yes/no)'
+      integer:
+        type: number
+        required: false
+        description: 'Number data'
 
 jobs:
   dump-inputs:
@@ -46,9 +50,11 @@ jobs:
           TEXT_DATA: ${{ github.event.inputs.text }}
           OPTIONAL_DATA: ${{ github.event.inputs.optional }}
           SECRET_INPUT: ${{ github.event.inputs.secret }}
+          INT_DATA: ${{ github.event.inputs.integer }}
         run: |
           echo "Text input: ${TEXT_DATA}"
           echo "Optional input: ${OPTIONAL_DATA}"
           echo "Secret input: ${SECRET_INPUT}"
+          echo "Integer input: ${INT_DATA}"
       - name: Print json
         run: jq < "${GITHUB_EVENT_PATH}" -r .inputs
