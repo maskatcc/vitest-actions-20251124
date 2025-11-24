@@ -22,6 +22,12 @@ jobs:
     name: Dump inputs
     runs-on: ubuntu-latest
     steps:
+      - name: Mask secret
+        run: |
+          echo -n '::add-mask::' > cmd.txt
+          jq < "${GITHUB_EVENT_PATH}" -r .inputs.secret >> cmd.txt
+          cat cmd.txt
+          rm cmd.txt
       - name: Show inputs
         env:
           TEXT_DATA: ${{ github.event.inputs.text }}
