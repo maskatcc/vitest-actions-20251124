@@ -31,3 +31,5 @@ jobs:
           echo "Text input: ${TEXT_DATA}"
           echo "Optional input: ${OPTIONAL_DATA}"
           echo "Secret input: ${SECRET_INPUT}"
+      - name: Print json
+        run: jq < "${GITHUB_EVENT_PATH}" -r .inputs
