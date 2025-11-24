@@ -23,17 +23,13 @@ on:
         description: 'apply changes? (yes/no)'
 
 jobs:
-  apply-changes:
-    name: Check apply
-    if: github.event.inputs.apply != 'yes'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Stop workflow
-        run: exit 1
   dump-inputs:
     name: Dump inputs
     runs-on: ubuntu-latest
     steps:
+      - name: Check apply
+        if: ${{ github.event.inputs.apply }} != 'yes'
+        run: exit 1
       - name: Mask secret
         run: |
           echo -n '::add-mask::' > cmd.txt
