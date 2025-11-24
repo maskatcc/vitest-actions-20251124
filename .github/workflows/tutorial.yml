@@ -16,6 +16,8 @@ jobs:
         run: pwd
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Inspect files after checkout
         run: ls -la
       - name: show current directory after checkout
