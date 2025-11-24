@@ -28,8 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Confirm apply
-        if: ${{ github.event.inputs.apply }} != 'yes'
+        if: github.event.inputs.apply != 'yes'
+        env:
+          APPLY: ${{ github.event.inputs.apply }}
         run: |
+          echo "Apply input is set to '${APPLY}'"
           echo "::error title=workflow::Cancelled cause apply is not 'yes'"
           exit 1
       - name: Mask secret
