@@ -27,10 +27,9 @@ jobs:
     name: Dump inputs
     runs-on: ubuntu-latest
     steps:
-      - name: Check apply
+      - name: Confirm apply
         if: ${{ github.event.inputs.apply }} != 'yes'
         run: |
-          echo "Cancelled cause apply is not 'yes'"
           echo "::error title=workflow::Cancelled cause apply is not 'yes'"
           exit 1
       - name: Mask secret
