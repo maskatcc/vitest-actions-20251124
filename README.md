@@ -38,3 +38,10 @@ actionlint
 5. Formatter:
    - Allows for formatting the current file
    - On type formatting auto indent for array items
+
+## 参考サイト
+
+- [【初心者向け】【入門】GitHub Actionsとは？書き方、デバッグ設定、runs\-onやcheckoutなどの仕組みや構造も含めて徹底解説 \#Linux \- Qiita](https://qiita.com/shun198/items/14cdba2d8e58ab96cf95)
+- [GitHub Actions の手動実行で入力された値を安全に使いたい](https://zenn.dev/hankei6km/articles/use-github-acions-workflow-dispatch-inputs-safely)
+- [GitHub Actionsを使ってVitestの自動実行とカバレッジをPR上で表示させよう！ \#GitHubActions \- Qiita](https://qiita.com/shun198/items/f640b3d3bf73d2cc3510)
+- [Github Actions matrix includeを使った実装方法](https://zenn.dev/masa9436/articles/f8d3971ef822b7)
