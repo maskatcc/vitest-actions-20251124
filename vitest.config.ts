@@ -6,7 +6,8 @@ export default defineConfig({
     environment: 'node',
     exclude: ['node_modules', 'dist'],
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'json-summary', 'html'],
+      reportOnFailure: true,
     },
   },
 })
