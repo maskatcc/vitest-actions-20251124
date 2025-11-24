@@ -1,0 +1,31 @@
+name: Test Inputs Workflow
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      text:
+        type: string
+        required: true
+        description: 'Text data'
+      optional:
+        type: string
+        required: false
+        description: 'Optional data'
+      secret:
+        type: string
+        required: true
+        description: 'Secret data'
+
+jobs:
+  dump-inputs:
+    name: Dump inputs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show inputs
+        env:
+          SECRET_INPUT: ${{ github.event.inputs.secret }}
+        run: |
+          echo "Text input: ${{ github.event.inputs.text }}"
+          echo "Optional input: ${{ github.event.inputs.optional }}"
+          echo "Secret input: ${SECRET_INPUT}"
