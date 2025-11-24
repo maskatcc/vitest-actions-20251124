@@ -29,7 +29,9 @@ jobs:
     steps:
       - name: Check apply
         if: ${{ github.event.inputs.apply }} != 'yes'
-        run: exit 1
+        run: |
+          echo "Cancelled cause apply is not 'yes'"
+          exit 1
       - name: Mask secret
         run: |
           echo -n '::add-mask::' > cmd.txt
