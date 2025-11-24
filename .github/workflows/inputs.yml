@@ -13,14 +13,10 @@ on:
         required: false
         default: 'M & M''s" && ls "/etc'
         description: 'Optional data'
-      secret:
-        type: string
-        required: true
-        description: 'Secret data'
       apply:
         type: string
         required: true
-        description: 'apply changes? (yes/no)'
+        description: 'apply changes? (yes / else)'
       integer:
         type: number
         required: false
@@ -49,7 +45,7 @@ jobs:
         env:
           TEXT_DATA: ${{ github.event.inputs.text }}
           OPTIONAL_DATA: ${{ github.event.inputs.optional }}
-          SECRET_INPUT: ${{ github.event.inputs.secret }}
+          SECRET_INPUT: ${{ secrets.TEST_INPUTS_WORKFLOW_SECRET }}
           INT_DATA: ${{ github.event.inputs.integer }}
         run: |
           echo "Text input: ${TEXT_DATA}"
