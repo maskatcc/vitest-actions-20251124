@@ -27,5 +27,6 @@ jobs:
           echo "Text input: ${{ github.event.inputs.text }}"
           echo "Optional input: ${{ github.event.inputs.optional }}"
           echo "Secret input: ${SECRET_INPUT}"
+          echo "Secret input: ${{env.SECRET_INPUT}}"
         env:
           SECRET_INPUT: ${{ github.event.inputs.secret }}
