@@ -1,5 +1,7 @@
+import { hello } from './main.js'
+
 describe('vitest', () => {
-  it('test1', () => {
-    expect(1 + 1).toBe(2)
+  it('hello', () => {
+    expect(hello()).toBe('Hello, vitest in actions.')
   })
 })

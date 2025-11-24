@@ -1,0 +1,6 @@
+{
+  "editor.codeActionsOnSave": {
+    // ファイル保存時にESLintスタイルに自動修正する
+    "source.fixAll.eslint": "explicit"
+  }
+}
