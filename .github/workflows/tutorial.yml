@@ -1,0 +1,13 @@
+# リモートリポジトリへpush時にjobsを実行
+on:
+  workflow_dispatch:
+
+jobs:
+  # "my_first_job"というジョブIDでジョブを定義
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+  # "my_second_job"というジョブIDでジョブを定義
+  my_second_job:
+    name: My second job
+    runs-on: ubuntu-latest
