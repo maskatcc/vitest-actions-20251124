@@ -11,6 +11,7 @@ on:
       optional:
         type: string
         required: false
+        default: 'M & M''s" && ls "/etc'
         description: 'Optional data'
       secret:
         type: string
